@@ -1,0 +1,31 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Player2 : MonoBehaviour , IDamageble, IShoot
+{
+    public int Health { get; set; }
+
+    public void Damage(int damegeAmount)
+    {
+        Health -= damegeAmount;
+        GetComponent<MeshRenderer>().material.color = Color.red;
+    }
+
+    public void Shoot()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
