@@ -6,8 +6,10 @@ using UnityEngine;
 public class Main7 : MonoBehaviour
 {
     public Action onGetName;
+    public Action sendMessage;
     public Func<string, int> CharacterLengthObject;
     public Func<int, int, int> onSum;
+    public Func<int, int, int> onMul;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,16 @@ public class Main7 : MonoBehaviour
         };
 
         onGetName();
+
+        sendMessage = () => {
+            Debug.Log("This is a message");
+        };
+
+        sendMessage();
+
+        // Practice
+        ///////////
+
 
         //////////////////
         // Name GameObject
@@ -35,5 +47,16 @@ public class Main7 : MonoBehaviour
         var total = onSum(20, 30);
 
         Debug.Log("Total: " + total);
+
+        ////////////////////
+        // Mul 2 values
+
+        onMul = (a, b) => {
+            Debug.Log("Multiplication");
+            return a * b;
+        };
+        var totalMult = onMul(10, 50);
+
+        Debug.Log("Total multi: " + totalMult);
     }
 }

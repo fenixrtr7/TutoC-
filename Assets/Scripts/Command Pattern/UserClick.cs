@@ -28,6 +28,7 @@ public class UserClick : MonoBehaviour
                     ICommand click = new ClickCommand(hitInfo.collider.gameObject, 
                                     new Color(Random.value, Random.value, Random.value));
                     click.Execute();
+                    CommandManager.Instance.AddCommand(click);
                 }
             }
         }
